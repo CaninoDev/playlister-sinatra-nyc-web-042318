@@ -2,6 +2,5 @@
 # Artists can have many genres and songs
 class Artist < ActiveRecord::Base
   has_many :songs
-  has_many :genres
   has_many :genres, through: :songs
 end
