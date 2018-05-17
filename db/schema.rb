@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180517150345) do
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
   end
 
 end
