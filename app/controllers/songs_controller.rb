@@ -20,7 +20,7 @@ class SongController < ApplicationController
     @song = Song.find_by(name: @deslugged)
     @song ||= Song.find(params[:slug])
     @song_artist_id = @song.artist.id
-    @song_genre_id = @song.genres[0].id
+    @song_genre_slug = @song.genres[0].id
       erb :"/songs/show"
     end
   end
