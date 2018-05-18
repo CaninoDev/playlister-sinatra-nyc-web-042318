@@ -24,3 +24,21 @@ class SongController < ApplicationController
       erb :"/songs/show"
     end
   end
+
+  get '/songs/:slug/edit'
+    @song = Song.find_by_slug(params[:slug])
+    erb :"/songs/edit"
+  end
+
+  patch "/songs/:slug" do
+    @song = Song.find_by_slug(params[:slug])
+    @song.update(params[:songs])
+    redirect "/songs/#{@song.slug}"
+  end
+
+  get '/songs/new' do
+    erb :"songs/create"
+  end
+
+  post '/songs/:slug' do
+  end
